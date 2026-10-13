@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Product Inventory Manager</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="header">
+        <div>
+            <h1>Inventory Manager</h1>
+            <p>Manage your products in one place.</p>
+        </div>
+    </header>
+
+    <main class="container">
+
+        <section class="dashboard">
+            <div class="card">
+                <p>Total Products</p>
+                <h2 id="totalProducts">0</h2>
+            </div>
+
+            <div class="card">
+                <p>Available Products</p>
+                <h2 id="availableProducts">0</h2>
+            </div>
+
+            <div class="card">
+                <p>Out of Stock</p>
+                <h2 id="outOfStock">0</h2>
+            </div>
+
+            <div class="card">
+                <p>Inventory Value</p>
+                <h2 id="inventoryValue">₹0</h2>
+            </div>
+        </section>
+
+        <section class="panel">
+
+            <h2>Add New Product</h2>
+
+            <form id="productForm">
+
+                <input
+                    type="text"
+                    id="productName"
+                    placeholder="Product name"
+                    required
+                >
+
+                <input
+                    type="number"
+                    id="productPrice"
+                    placeholder="Price (₹)"
+                    min="0.01"
+                    step="0.01"
+                    required
+                >
+
+                <input
+                    type="number"
+                    id="productQuantity"
+                    placeholder="Quantity"
+                    min="0"
+                    step="1"
+                    required
+                >
+
+                <input
+                    type="text"
+                    id="productCategory"
+                    placeholder="Category"
+                    required
+                >
+
+                <button type="submit">Add Product</button>
+
+            </form>
+
+        </section>
+
+        <section class="panel">
+
+            <div class="list-header">
+                <h2>Product Inventory</h2>
+
+                <input
+                    type="search"
+                    id="searchInput"
+                    placeholder="Search products..."
+                >
+            </div>
+
+            <div class="table-wrapper">
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Product</th>
+                            <th>Category</th>
+                            <th>Price</th>
+                            <th>Quantity</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="productTable"></tbody>
+                </table>
+
+            </div>
+
+            <p id="emptyMessage" hidden>No products found.</p>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Product Inventory Manager | TypeScript Assignment</p>
+    </footer>
+
+    <script src="inventory.js"></script>
+
+</body>
+</html>
